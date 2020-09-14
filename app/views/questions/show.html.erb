@@ -20,6 +20,15 @@
   <%= @question.user.try(:email) %>
 </p>
 
+
+<p>
+  <strong>Answers:</strong>
+  <% @question.answers.each do |answer| %>
+  	<%= answer.answer_field  %>
+  <% end %>
+</p>
+
+
 <%= button_to 'Follow User', follow_user_question_path(@question) %> |
 <%= button_to 'Follow Topic', follow_topic_question_path(@question) %>
 
